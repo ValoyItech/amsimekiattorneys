@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Msimeki Amukelani Attorneys</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-red: #c62828;
+            --dark-charcoal: #1a1a2e;
+            --darker: #0f0f1a;
+            --light-grey: #e8e8e8;
+            --white: #ffffff;
+            --light-bg: #f5f5f7;
+            --light-text: #1a1a2e;
+            --muted: #666666;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--darker);
+            color: var(--light-grey);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Nav - LIGHT */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 0.7rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+        }
+
+        .logo-nav {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-nav img {
+            height: 58px;
+            width: auto;
+            display: block;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--light-text);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-red);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover, .nav-links a.active { color: var(--primary-red); }
+        .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--light-text);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Sidebar */
+        .sidebar-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(4px);
+            z-index: 1999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+        .sidebar-overlay.active { opacity: 1; visibility: visible; }
+
+        .sidebar {
+            position: fixed;
+            top: 0; right: -340px;
+            width: 320px; height: 100vh;
+            background: var(--darker);
+            z-index: 2000;
+            padding: 2rem;
+            transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-left: 3px solid var(--primary-red);
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+        }
+        .sidebar.active { right: 0; }
+
+        .sidebar-close {
+            align-self: flex-end;
+            background: none; border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+            width: 40px; height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background 0.3s;
+        }
+        .sidebar-close:hover { background: rgba(198, 40, 40, 0.2); }
+
+        .sidebar-logo { margin: 1rem 0 2rem; }
+        .sidebar-logo img { height: 45px; width: auto; display: block; }
+
+        .sidebar-links { list-style: none; flex: 1; }
+        .sidebar-links li { margin-bottom: 0.5rem; }
+        .sidebar-links a {
+            color: var(--light-grey);
+            text-decoration: none;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.9rem 1rem;
+            border-radius: 10px;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+        .sidebar-links a:hover, .sidebar-links a.active {
+            background: rgba(198, 40, 40, 0.12);
+            color: var(--primary-red);
+        }
+
+        .sidebar-contact {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 1.5rem;
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+        }
+        .sidebar-contact p {
+            margin-bottom: 0.7rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        .sidebar-contact i { color: var(--primary-red); width: 20px; }
+
+        /* Booking Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(15, 15, 26, 0.85);
+            backdrop-filter: blur(6px);
+            z-index: 3000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .modal-overlay.active { opacity: 1; visibility: visible; }
+
+        .modal-box {
+            background: var(--white);
+            border-radius: 20px;
+            width: 100%;
+            max-width: 650px;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 2.5rem;
+            position: relative;
+            transform: translateY(30px) scale(0.95);
+            transition: all 0.4s;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+        }
+        .modal-overlay.active .modal-box {
+            transform: translateY(0) scale(1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1.2rem;
+            right: 1.2rem;
+            width: 40px; height: 40px;
+            border-radius: 50%;
+            background: #f5f5f7;
+            border: none;
+            color: var(--light-text);
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        .modal-close:hover { background: var(--primary-red); color: var(--white); }
+
+        .modal-box h2 {
+            font-size: 1.6rem;
+            color: var(--light-text);
+            margin-bottom: 0.3rem;
+            font-weight: 700;
+        }
+        .modal-box > p {
+            color: var(--muted);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .modal-form .form-group { margin-bottom: 1.1rem; }
+        .modal-form label {
+            display: block;
+            color: var(--light-text);
+            margin-bottom: 0.4rem;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+        .modal-form input,
+        .modal-form select,
+        .modal-form textarea {
+            width: 100%;
+            padding: 0.9rem;
+            background: #fafafa;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            color: var(--light-text);
+            font-family: inherit;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+        }
+        .modal-form input:focus,
+        .modal-form select:focus,
+        .modal-form textarea:focus {
+            outline: none;
+            border-color: var(--primary-red);
+            background: var(--white);
+            box-shadow: 0 0 0 3px rgba(198, 40, 40, 0.1);
+        }
+        .modal-form textarea { min-height: 80px; resize: vertical; }
+        .modal-form .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        /* Page Header */
+        .page-header {
+            min-height: 55vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            padding-top: 80px;
+        }
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(15, 15, 26, 0.82);
+        }
+        .page-header-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+        .page-header-content h1 {
+            font-size: 3rem;
+            color: var(--white);
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+        .breadcrumb {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.95rem;
+        }
+        .breadcrumb a {
+            color: var(--primary-red);
+            text-decoration: none;
+        }
+        .breadcrumb i { margin: 0 0.5rem; font-size: 0.7rem; }
+
+        /* Buttons */
+        .btn {
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-radius: 50px;
+            transition: all 0.3s;
+            font-size: 0.85rem;
+            border: 2px solid transparent;
+            cursor: pointer;
+            display: inline-block;
+        }
+        .btn-primary {
+            background: var(--primary-red);
+            color: var(--white);
+            box-shadow: 0 10px 30px rgba(198, 40, 40, 0.4);
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(198, 40, 40, 0.6);
+            background: #d32f2f;
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border-color: rgba(255,255,255,0.4);
+        }
+        .btn-outline:hover {
+            border-color: var(--primary-red);
+            color: var(--primary-red);
+            transform: translateY(-3px);
+        }
+        .btn-dark {
+            background: var(--dark-charcoal);
+            color: var(--white);
+        }
+        .btn-dark:hover {
+            background: var(--primary-red);
+            transform: translateY(-3px);
+        }
+
+        /* Sections */
+        section { padding: 5rem 5%; max-width: 1200px; margin: 0 auto; }
+        .section-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+        .section-header h2 {
+            font-size: 2.4rem;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+            font-weight: 700;
+        }
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--primary-red);
+        }
+        .section-header p {
+            margin-top: 1.5rem;
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .light-section {
+            background: var(--light-bg);
+            color: var(--light-text);
+        }
+        .light-section .section-header h2 { color: var(--light-text); }
+        .light-section .section-header p { color: var(--muted); }
+
+        .dark-section {
+            background: var(--darker);
+            color: var(--light-grey);
+        }
+        .dark-section .section-header h2 { color: var(--white); }
+        .dark-section .section-header p { color: rgba(255,255,255,0.6); }
+
+        /* Service Detail Cards */
+        .service-detail-card {
+            background: var(--white);
+            border: 1px solid #e0e0e0;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+        .service-detail-card:hover {
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            border-color: rgba(198, 40, 40, 0.3);
+        }
+
+        .service-detail-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 2rem 2.5rem;
+            background: linear-gradient(135deg, var(--dark-charcoal) 0%, var(--darker) 100%);
+            border-bottom: 3px solid var(--primary-red);
+        }
+
+        .service-detail-icon {
+            width: 70px; height: 70px;
+            background: rgba(198, 40, 40, 0.2);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: var(--primary-red);
+            flex-shrink: 0;
+        }
+
+        .service-detail-header h3 {
+            color: var(--white);
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .service-detail-header p {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.95rem;
+            margin-top: 0.3rem;
+        }
+
+        .service-detail-body {
+            padding: 2.5rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .service-detail-body h4 {
+            color: var(--light-text);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        .service-detail-body h4 i { color: var(--primary-red); }
+
+        .service-detail-body ul {
+            list-style: none;
+        }
+        .service-detail-body ul li {
+            padding: 0.6rem 0;
+            color: var(--muted);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .service-detail-body ul li:last-child { border-bottom: none; }
+        .service-detail-body ul li i {
+            color: var(--primary-red);
+            font-size: 0.8rem;
+        }
+
+        .service-cta-bar {
+            padding: 1.5rem 2.5rem;
+            background: #fafafa;
+            border-top: 1px solid #e0e0e0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .service-cta-bar span {
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+        .service-cta-bar span strong { color: var(--light-text); }
+
+        /* Process Section */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+        .process-step::after {
+            content: '';
+            position: absolute;
+            top: 40px;
+            right: -1rem;
+            width: calc(100% - 60px);
+            height: 2px;
+            background: rgba(198, 40, 40, 0.2);
+        }
+        .process-step:last-child::after { display: none; }
+
+        .process-number {
+            width: 80px; height: 80px;
+            background: linear-gradient(135deg, var(--primary-red), var(--dark-charcoal));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin: 0 auto 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+        .process-step h3 {
+            color: var(--white);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        .process-step p {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        .footer-main {
+            background: var(--white);
+            border-top: 1px solid rgba(0,0,0,0.08);
+            padding: 4rem 5% 2rem;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .footer-col h4 {
+            color: var(--light-text);
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.75rem;
+            font-weight: 600;
+        }
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 40px; height: 2px;
+            background: var(--primary-red);
+        }
+        .footer-col p, .footer-col a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            line-height: 1.8;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s;
+        }
+        .footer-col a:hover { color: var(--primary-red); }
+
+        .footer-logo-img { margin-bottom: 1rem; }
+        .footer-logo-img img { height: 125px; width: auto; display: block; }
+
+        .footer-social {
+            display: flex;
+            gap: 0.8rem;
+            margin-top: 1.2rem;
+        }
+        .footer-social a {
+            width: 40px; height: 40px;
+            border-radius: 50%;
+            background: rgba(198, 40, 40, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-red);
+            transition: all 0.3s;
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+        .footer-social a:hover {
+            background: var(--primary-red);
+            transform: translateY(-3px);
+            color: var(--white);
+        }
+
+        .footer-contact-list p {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+        .footer-contact-list i {
+            color: var(--primary-red);
+            margin-top: 0.3rem;
+            width: 16px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(0,0,0,0.06);
+            padding: 1.5rem 5%;
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.85rem;
+            max-width: 1200px;
+            margin: 2rem auto 0;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px; height: 50px;
+            background: var(--primary-red);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 998;
+            border: none;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 15px rgba(198, 40, 40, 0.4);
+        }
+        .back-to-top.visible { opacity: 1; visibility: visible; }
+        .back-to-top:hover { transform: translateY(-5px); background: #d32f2f; }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s, transform 0.8s;
+        }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        @media (max-width: 992px) {
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .service-detail-body { grid-template-columns: 1fr; gap: 1.5rem; }
+            .process-grid { grid-template-columns: 1fr 1fr; }
+            .process-step::after { display: none; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-toggle { display: block; }
+            .page-header-content h1 { font-size: 2rem; }
+            .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .process-grid { grid-template-columns: 1fr; }
+            section { padding: 3rem 5%; }
+            .service-detail-header { flex-direction: column; text-align: center; }
+            .modal-form .form-row { grid-template-columns: 1fr; }
+            .modal-box { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo-nav">
+            <img src="logo.png" alt="Msimeki Amukelani Attorneys">
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html" class="active">Services</a></li>
+            <li><a href="#" onclick="openBookingModal(); return false;">Book Consultation</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <button class="mobile-toggle" onclick="toggleSidebar()" aria-label="Menu">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+    <div class="sidebar" id="sidebar">
+        <button class="sidebar-close" onclick="toggleSidebar()"><i class="fas fa-times"></i></button>
+        <div class="sidebar-logo">
+            <img src="logo.png" alt="Msimeki Amukelani Attorneys">
+        </div>
+        <ul class="sidebar-links">
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="about.html"><i class="fas fa-user-tie"></i> About</a></li>
+            <li><a href="services.html" class="active"><i class="fas fa-briefcase"></i> Services</a></li>
+            <li><a href="#" onclick="openBookingModal(); toggleSidebar(); return false;"><i class="fas fa-calendar-check"></i> Book Consultation</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+        <div class="sidebar-contact">
+            <p><i class="fas fa-phone"></i> 011 394 4110</p>
+            <p><i class="fas fa-mobile-alt"></i> 076 031 9615</p>
+            <p><i class="fas fa-envelope"></i> amu@amsimekiattorneys.co.za</p>
+        </div>
+    </div>
+
+    <!-- Booking Modal -->
+    <div class="modal-overlay" id="bookingModal" onclick="closeBookingModal(event)">
+        <div class="modal-box" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeBookingModal()"><i class="fas fa-times"></i></button>
+            <h2><i class="fas fa-calendar-check" style="color: var(--primary-red); margin-right: 0.5rem;"></i> Book a Consultation</h2>
+            <p>Fill in the form below and we will confirm your appointment within 24 hours.</p>
+            <form class="modal-form" onsubmit="event.preventDefault(); alert('Thank you! Your consultation request has been received. We will contact you within 24 hours to confirm your appointment.'); closeBookingModal();">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>First Name *</label>
+                        <input type="text" placeholder="Your first name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name *</label>
+                        <input type="text" placeholder="Your last name" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Email *</label>
+                        <input type="email" placeholder="your@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone *</label>
+                        <input type="tel" placeholder="Your phone number" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Service *</label>
+                        <select required>
+                            <option value="">Select...</option>
+                            <option>Civil Litigation</option>
+                            <option>Property & Conveyancing</option>
+                            <option>Family Law</option>
+                            <option>Commercial Law</option>
+                            <option>Criminal Law</option>
+                            <option>Estate Planning</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Preferred Date *</label>
+                        <input type="date" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Preferred Time *</label>
+                    <select required>
+                        <option value="">Select time...</option>
+                        <option>09:00 – 10:00</option>
+                        <option>10:00 – 11:00</option>
+                        <option>11:00 – 12:00</option>
+                        <option>12:00 – 13:00</option>
+                        <option>14:00 – 15:00</option>
+                        <option>15:00 – 16:00</option>
+                        <option>16:00 – 17:00</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Case Description</label>
+                    <textarea placeholder="Briefly describe your legal matter..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; border: none;">
+                    <i class="fas fa-calendar-check"></i> Request Appointment
+                </button>
+                <p style="text-align: center; margin-top: 1rem; font-size: 0.85rem; color: #999;">
+                    <i class="fas fa-lock"></i> Your information is confidential and secure.
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <div class="page-header" style="background-image: url('images/services.jpg');">
+        <div class="page-header-content">
+            <h1>Our Legal Services</h1>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> <i class="fas fa-chevron-right"></i> <span>Services</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Intro -->
+    <section class="light-section">
+        <div class="section-header fade-in">
+            <h2>Comprehensive Legal Expertise</h2>
+            <p>We offer a full spectrum of legal services tailored to meet the diverse needs of individuals and businesses in South Africa</p>
+        </div>
+    </section>
+
+    <!-- Services Detail -->
+    <section class="light-section" style="padding-top: 0;">
+        <!-- Civil Litigation -->
+        <div class="service-detail-card fade-in">
+            <div class="service-detail-header">
+                <div class="service-detail-icon"><i class="fas fa-scale-balanced"></i></div>
+                <div>
+                    <h3>Civil Litigation</h3>
+                    <p>Resolving disputes through skilled advocacy and strategic legal action</p>
+                </div>
+            </div>
+            <div class="service-detail-body">
+                <div>
+                    <h4><i class="fas fa-list-check"></i> What We Handle</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Contract disputes and breaches</li>
+                        <li><i class="fas fa-check"></i> Debt collection and recovery</li>
+                        <li><i class="fas fa-check"></i> Personal injury claims</li>
+                        <li><i class="fas fa-check"></i> Property and boundary disputes</li>
+                        <li><i class="fas fa-check"></i> Defamation and reputation matters</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4><i class="fas fa-star"></i> Our Approach</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Thorough case assessment and strategy</li>
+                        <li><i class="fas fa-check"></i> Pre-litigation negotiation attempts</li>
+                        <li><i class="fas fa-check"></i> Aggressive courtroom advocacy</li>
+                        <li><i class="fas fa-check"></i> Cost-effective resolution focus</li>
+                        <li><i class="fas fa-check"></i> Regular client communication</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="service-cta-bar">
+                <span>Need representation in a civil matter? <strong>We can help.</strong></span>
+                <a href="#" onclick="openBookingModal(); return false;" class="btn btn-dark" style="padding: 0.7rem 1.5rem; font-size: 0.8rem;"><i class="fas fa-calendar-check"></i> Book Now</a>
+            </div>
+        </div>
+
+        <!-- Property -->
+        <div class="service-detail-card fade-in">
+            <div class="service-detail-header">
+                <div class="service-detail-icon"><i class="fas fa-house-chimney"></i></div>
+                <div>
+                    <h3>Property Law & Conveyancing</h3>
+                    <p>Seamless property transactions with meticulous legal oversight</p>
+                </div>
+            </div>
+            <div class="service-detail-body">
+                <div>
+                    <h4><i class="fas fa-list-check"></i> What We Handle</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Property transfers and registrations</li>
+                        <li><i class="fas fa-check"></i> Bond registrations and cancellations</li>
+                        <li><i class="fas fa-check"></i> Title deed searches and verification</li>
+                        <li><i class="fas fa-check"></i> Sectional title schemes</li>
+                        <li><i class="fas fa-check"></i> Property development advice</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4><i class="fas fa-star"></i> Our Approach</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> End-to-end transaction management</li>
+                        <li><i class="fas fa-check"></i> Due diligence and risk assessment</li>
+                        <li><i class="fas fa-check"></i> Coordination with banks and agents</li>
+                        <li><i class="fas fa-check"></i> Compliance with all legal requirements</li>
+                        <li><i class="fas fa-check"></i> Efficient turnaround times</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="service-cta-bar">
+                <span>Buying or selling property? <strong>Let us handle the legalities.</strong></span>
+                <a href="#" onclick="openBookingModal(); return false;" class="btn btn-dark" style="padding: 0.7rem 1.5rem; font-size: 0.8rem;"><i class="fas fa-calendar-check"></i> Book Now</a>
+            </div>
+        </div>
+
+        <!-- Family Law -->
+        <div class="service-detail-card fade-in">
+            <div class="service-detail-header">
+                <div class="service-detail-icon"><i class="fas fa-people-roof"></i></div>
+                <div>
+                    <h3>Family Law</h3>
+                    <p>Compassionate guidance through sensitive family matters</p>
+                </div>
+            </div>
+            <div class="service-detail-body">
+                <div>
+                    <h4><i class="fas fa-list-check"></i> What We Handle</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Divorce proceedings (contested & uncontested)</li>
+                        <li><i class="fas fa-check"></i> Child custody and access arrangements</li>
+                        <li><i class="fas fa-check"></i> Maintenance claims (child and spousal)</li>
+                        <li><i class="fas fa-check"></i> Domestic violence protection orders</li>
+                        <li><i class="fas fa-check"></i> Antenuptial contracts</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4><i class="fas fa-star"></i> Our Approach</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Sensitive and confidential handling</li>
+                        <li><i class="fas fa-check"></i> Child-centered solutions</li>
+                        <li><i class="fas fa-check"></i> Mediation and settlement focus</li>
+                        <li><i class="fas fa-check"></i> Strong courtroom advocacy when needed</li>
+                        <li><i class="fas fa-check"></i> Emotional support referrals</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="service-cta-bar">
+                <span>Going through a family matter? <strong>We're here for you.</strong></span>
+                <a href="#" onclick="openBookingModal(); return false;" class="btn btn-dark" style="padding: 0.7rem 1.5rem; font-size: 0.8rem;"><i class="fas fa-calendar-check"></i> Book Now</a>
+            </div>
+        </div>
+
+        <!-- Commercial -->
+        <div class="service-detail-card fade-in">
+            <div class="service-detail-header">
+                <div class="service-detail-icon"><i class="fas fa-handshake"></i></div>
+                <div>
+                    <h3>Commercial Law</h3>
+                    <p>Strategic legal support for business growth and protection</p>
+                </div>
+            </div>
+            <div class="service-detail-body">
+                <div>
+                    <h4><i class="fas fa-list-check"></i> What We Handle</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Business contracts and agreements</li>
+                        <li><i class="fas fa-check"></i> Company registrations and compliance</li>
+                        <li><i class="fas fa-check"></i> Mergers and acquisitions</li>
+                        <li><i class="fas fa-check"></i> Shareholder disputes</li>
+                        <li><i class="fas fa-check"></i> Intellectual property matters</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4><i class="fas fa-star"></i> Our Approach</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Business-focused legal advice</li>
+                        <li><i class="fas fa-check"></i> Risk mitigation strategies</li>
+                        <li><i class="fas fa-check"></i> Drafting watertight contracts</li>
+                        <li><i class="fas fa-check"></i> Regulatory compliance guidance</li>
+                        <li><i class="fas fa-check"></i> Dispute resolution and litigation</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="service-cta-bar">
+                <span>Need business legal advice? <strong>Protect your enterprise.</strong></span>
+                <a href="#" onclick="openBookingModal(); return false;" class="btn btn-dark" style="padding: 0.7rem 1.5rem; font-size: 0.8rem;"><i class="fas fa-calendar-check"></i> Book Now</a>
+            </div>
+        </div>
+
+        <!-- Criminal -->
+        <div class="service-detail-card fade-in">
+            <div class="service-detail-header">
+                <div class="service-detail-icon"><i class="fas fa-gavel"></i></div>
+                <div>
+                    <h3>Criminal Law</h3>
+                    <p>Vigorous defense protecting your rights and freedom</p>
+                </div>
+            </div>
+            <div class="service-detail-body">
+                <div>
+                    <h4><i class="fas fa-list-check"></i> What We Handle</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Bail applications</li>
+                        <li><i class="fas fa-check"></i> Defense representation in all courts</li>
+                        <li><i class="fas fa-check"></i> Appeals and reviews</li>
+                        <li><i class="fas fa-check"></i> Road traffic offenses</li>
+                        <li><i class="fas fa-check"></i> Fraud, theft, and corruption matters</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4><i class="fas fa-star"></i> Our Approach</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Immediate response and availability</li>
+                        <li><i class="fas fa-check"></i> Thorough investigation and preparation</li>
+                        <li><i class="fas fa-check"></i> Strong courtroom advocacy</li>
+                        <li><i class="fas fa-check"></i> Protection of constitutional rights</li>
+                        <li><i class="fas fa-check"></i> Appeals to higher courts</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="service-cta-bar">
+                <span>Facing criminal charges? <strong>Your defense starts now.</strong></span>
+                <a href="#" onclick="openBookingModal(); return false;" class="btn btn-dark" style="padding: 0.7rem 1.5rem; font-size: 0.8rem;"><i class="fas fa-calendar-check"></i> Book Now</a>
+            </div>
+        </div>
+
+        <!-- Estate -->
+        <div class="service-detail-card fade-in">
+            <div class="service-detail-header">
+                <div class="service-detail-icon"><i class="fas fa-file-signature"></i></div>
+                <div>
+                    <h3>Estate Planning & Administration</h3>
+                    <p>Securing your legacy with meticulous estate management</p>
+                </div>
+            </div>
+            <div class="service-detail-body">
+                <div>
+                    <h4><i class="fas fa-list-check"></i> What We Handle</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Wills drafting and amendments</li>
+                        <li><i class="fas fa-check"></i> Trust formation and administration</li>
+                        <li><i class="fas fa-check"></i> Deceased estate administration</li>
+                        <li><i class="fas fa-check"></i> Executor and curator services</li>
+                        <li><i class="fas fa-check"></i> Estate duty and tax advice</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4><i class="fas fa-star"></i> Our Approach</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Personalized estate planning</li>
+                        <li><i class="fas fa-check"></i> Minimizing estate duty liability</li>
+                        <li><i class="fas fa-check"></i> Sensitive family communication</li>
+                        <li><i class="fas fa-check"></i> Efficient estate wind-up</li>
+                        <li><i class="fas fa-check"></i> Ongoing trust management</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="service-cta-bar">
+                <span>Planning for the future? <strong>Secure your legacy today.</strong></span>
+                <a href="#" onclick="openBookingModal(); return false;" class="btn btn-dark" style="padding: 0.7rem 1.5rem; font-size: 0.8rem;"><i class="fas fa-calendar-check"></i> Book Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section class="dark-section" style="max-width: 100%; padding: 5rem 0;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 5%;">
+            <div class="section-header fade-in">
+                <h2>How We Work</h2>
+                <p>Our streamlined process ensures efficient and effective legal service delivery</p>
+            </div>
+            <div class="process-grid">
+                <div class="process-step fade-in">
+                    <div class="process-number">1</div>
+                    <h3>Initial Consultation</h3>
+                    <p>We discuss your matter in confidence, assess your needs, and outline potential strategies.</p>
+                </div>
+                <div class="process-step fade-in">
+                    <div class="process-number">2</div>
+                    <h3>Case Assessment</h3>
+                    <p>We conduct thorough legal research and analysis to build a strong foundation for your case.</p>
+                </div>
+                <div class="process-step fade-in">
+                    <div class="process-number">3</div>
+                    <h3>Strategy & Action</h3>
+                    <p>We implement the agreed strategy, keeping you informed at every stage of the process.</p>
+                </div>
+                <div class="process-step fade-in">
+                    <div class="process-number">4</div>
+                    <h3>Resolution</h3>
+                    <p>We pursue the best possible outcome through settlement, litigation, or alternative resolution.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="light-section" style="text-align: center;">
+        <div class="fade-in">
+            <h2 style="font-size: 2rem; color: var(--light-text); margin-bottom: 1rem;">Not Sure Which Service You Need?</h2>
+            <p style="color: var(--muted); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">Contact us for a free initial assessment. We'll guide you to the right legal solution for your situation.</p>
+            <a href="contact.html" class="btn btn-primary"><i class="fas fa-phone"></i> Contact Us</a>
+            <a href="#" onclick="openBookingModal(); return false;" class="btn btn-dark" style="margin-left: 1rem;"><i class="fas fa-calendar-check"></i> Book a Consultation</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-main">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="footer-logo-img">
+                    <img src="logo.png" alt="Msimeki Amukelani Attorneys">
+                </div>
+                <p>A distinguished law firm based in Kempton Park, Gauteng. Committed to delivering exceptional legal services with integrity and professionalism.</p>
+                <p style="font-style: italic; color: #999; margin-top: 0.5rem;">"Vayimebi — Attorneys & Conveyancers"</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="services.html">Our Services</a>
+                <a href="#" onclick="openBookingModal(); return false;">Book Consultation</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4>Practice Areas</h4>
+                <a href="services.html">Civil Litigation</a>
+                <a href="services.html">Property & Conveyancing</a>
+                <a href="services.html">Family Law</a>
+                <a href="services.html">Commercial Law</a>
+                <a href="services.html">Criminal Law</a>
+                <a href="services.html">Estate Planning</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <div class="footer-contact-list">
+                    <p><i class="fas fa-location-dot"></i> 70 Commissioner Street, Office 70K, Kempton Park, 1619</p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:0113944110">011 394 4110</a></p>
+                    <p><i class="fas fa-mobile-alt"></i> <a href="tel:0760319615">076 031 9615</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:amu@amsimekiattorneys.co.za">amu@amsimekiattorneys.co.za</a></p>
+                    <p><i class="fas fa-clock"></i> Mon – Fri: 08:00 – 17:00<br>Sat: 09:00 – 13:00</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 Msimeki Amukelani Attorneys. All rights reserved. | 70 Commissioner Street, Office 70K, Kempton Park, 1619
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()"><i class="fas fa-chevron-up"></i></button>
+
+    <script>
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('active');
+            document.getElementById('sidebarOverlay').classList.toggle('active');
+            document.body.style.overflow = document.getElementById('sidebar').classList.contains('active') ? 'hidden' : '';
+        }
+
+        function openBookingModal() {
+            document.getElementById('bookingModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeBookingModal(e) {
+            if (!e || e.target.id === 'bookingModal' || e.target.closest('.modal-close')) {
+                document.getElementById('bookingModal').classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            backToTop.classList.toggle('visible', window.scrollY > 500);
+        });
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+
+</body>
+</html>
