@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="title" content="About Msimeki Amukelani Attorneys | Trusted Law Firm in Kempton Park">
-<meta name="description" content="Learn more about Msimeki Amukelani Attorneys, a professional law firm in Kempton Park offering expert legal services in civil litigation, conveyancing, family law, and more across Gauteng.">
-<meta name="keywords" content="about Msimeki Amukelani Attorneys, law firm Kempton Park, attorneys Gauteng, legal team, experienced lawyers">
+    <meta name="title" content="About Msimeki Amukelani Attorneys | Specialist Divorce & Family Law Firm in Kempton Park">
+<meta name="description" content="Learn more about Msimeki Amukelani Attorneys, a specialist divorce and family law firm in Kempton Park. Expert contested & uncontested divorces, Rule 43 applications, and family law services across Gauteng. Est 2014.">
+<meta name="keywords" content="about Msimeki Amukelani Attorneys, divorce attorney Kempton Park, Rule 43 application, contested divorce, uncontested divorce, family law Gauteng, legal team, experienced lawyers, Est 2014">
 <meta name="author" content="Msimeki Amukelani Attorneys">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#c62828">
@@ -19,15 +19,15 @@
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://amsimekiattorneys.co.za/about.html">
-<meta property="og:title" content="About Msimeki Amukelani Attorneys | Professional Legal Team">
-<meta property="og:description" content="Meet the legal professionals at Msimeki Amukelani Attorneys, delivering trusted legal services in Kempton Park and Gauteng.">
+<meta property="og:title" content="About Msimeki Amukelani Attorneys | Specialist Divorce & Family Law">
+<meta property="og:description" content="Meet the legal professionals at Msimeki Amukelani Attorneys, delivering specialist divorce and family law services in Kempton Park and Gauteng since 2014.">
 <meta property="og:image" content="https://amsimekiattorneys.co.za/images/hero1.jpg">
 <meta property="og:site_name" content="Msimeki Amukelani Attorneys">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://amsimekiattorneys.co.za/about.html">
 <meta name="twitter:title" content="About Msimeki Amukelani Attorneys">
-<meta name="twitter:description" content="Trusted legal professionals based in Kempton Park offering expert legal services across Gauteng.">
+<meta name="twitter:description" content="Trusted legal professionals specialising in divorce and family law, based in Kempton Park since 2014.">
 <meta name="twitter:image" content="https://amsimekiattorneys.co.za/images/hero1.jpg">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -333,6 +333,14 @@
             font-weight: 800;
             margin-bottom: 0.5rem;
         }
+        .page-header-slogan {
+            color: var(--primary-red);
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
         .breadcrumb {
             color: rgba(255,255,255,0.6);
             font-size: 0.95rem;
@@ -444,6 +452,18 @@
             background: rgba(15, 15, 26, 0.88);
         }
         .bg-image-section > * { position: relative; z-index: 2; }
+
+        /* Slogan Banner */
+        .slogan-banner {
+            background: var(--primary-red);
+            color: var(--white);
+            text-align: center;
+            padding: 1.2rem 5%;
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
 
         /* About Content */
         .about-story-grid {
@@ -782,6 +802,7 @@
             .director-profile { padding: 2rem; }
             .modal-form .form-row { grid-template-columns: 1fr; }
             .modal-box { padding: 1.5rem; }
+            .slogan-banner { font-size: 0.9rem; letter-spacing: 2px; padding: 1rem 5%; }
         }
 
 
@@ -911,9 +932,11 @@
                         <label>Service *</label>
                         <select required>
                             <option value="">Select...</option>
-                            <option>Civil Litigation</option>
-                            <option>Property & Conveyancing</option>
+                            <option>Contested Divorce</option>
+                            <option>Uncontested Divorce</option>
+                            <option>Rule 43 Application</option>
                             <option>Family Law</option>
+                            <option>Civil Litigation</option>
                             <option>Commercial Law</option>
                             <option>Criminal Law</option>
                             <option>Estate Planning</option>
@@ -955,6 +978,7 @@
     <!-- Page Header -->
     <div class="page-header" style="background-image: url('images/about.jpg');">
         <div class="page-header-content">
+            <div class="page-header-slogan"><i class="fas fa-handshake" style="margin-right: 0.5rem;"></i> Right By Your Side</div>
             <h1>About Our Firm</h1>
             <div class="breadcrumb">
                 <a href="index.html">Home</a> <i class="fas fa-chevron-right"></i> <span>About</span>
@@ -962,21 +986,26 @@
         </div>
     </div>
 
+    <!-- Slogan Banner -->
+    <div class="slogan-banner">
+        <i class="fas fa-handshake" style="margin-right: 0.5rem;"></i> RIGHT BY YOUR SIDE
+    </div>
+
     <!-- Our Story -->
     <section class="light-section">
         <div class="section-header fade-in">
             <h2>Our Story</h2>
-            <p>Dedicated to justice and client success since establishment</p>
+            <p>Dedicated to justice and client success since 2014</p>
         </div>
         <div class="about-story-grid">
             <div class="about-story-text fade-in">
-                <h3>A Legacy of Legal Excellence in Gauteng</h3>
-                <p>Msimeki Amukelani Attorneys was founded on the principle that every client deserves exceptional legal representation delivered with integrity, professionalism, and personal attention. Based in Kempton Park, we have grown to become a trusted legal partner for individuals and businesses across Gauteng.</p>
+                <h3>A Legacy of Legal Excellence in Gauteng <span style="color: var(--primary-red); font-size: 1rem; display: block; margin-top: 0.3rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;">Est 2014</span></h3>
+                <p>Msimeki Amukelani Attorneys was founded in 2014 on the principle that every client deserves exceptional legal representation delivered with integrity, professionalism, and personal attention. Based in Kempton Park, we have grown to become a trusted legal partner for individuals and families across Gauteng.</p>
                 <p>Our firm is led by <strong>Amukelani Msimeki</strong>, a highly qualified attorney who brings a unique blend of academic excellence and practical courtroom experience. With an LLB degree from the prestigious University of Pretoria (2006) and admission as a practicing attorney in 2014, Mr. Msimeki has built a reputation for strategic thinking and unwavering dedication to his clients.</p>
-                <p>Beyond private practice, Mr. Msimeki serves as an <strong>Acting Magistrate across multiple Gauteng courts</strong>, providing him with invaluable insight into the judicial system that directly benefits our clients.</p>
+                <p>Our main focus is <strong>contested and uncontested divorces</strong> and <strong>Rule 43 applications</strong>, ensuring clients receive specialist, dedicated attention during the most challenging times of their lives. Beyond private practice, Mr. Msimeki serves as an <strong>Acting Magistrate across multiple Gauteng courts</strong>, providing invaluable insight into the judicial system that directly benefits our clients.</p>
                 <ul>
                     <li><i class="fas fa-check"></i> Client-centered approach to every case</li>
-                    <li><i class="fas fa-check"></i> Strategic and practical legal solutions</li>
+                    <li><i class="fas fa-check"></i> Specialist divorce and family law expertise</li>
                     <li><i class="fas fa-check"></i> Transparent communication throughout</li>
                     <li><i class="fas fa-check"></i> Deep understanding of South African law</li>
                 </ul>
@@ -1001,6 +1030,9 @@
                     <p class="role">Director / Attorney</p>
                     <span class="edu-tag"><i class="fas fa-graduation-cap"></i> LLB UP (2006)</span><br>
                     <span class="edu-tag"><i class="fas fa-gavel"></i> Attorney Since 2014</span>
+                    <p style="color: var(--primary-red); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; font-size: 0.75rem; margin-top: 1rem;">
+                        <i class="fas fa-handshake" style="margin-right: 0.3rem;"></i> Right By Your Side
+                    </p>
                     <div style="margin-top: 1.5rem; display: flex; justify-content: center; gap: 1rem;">
                         <a href="#" style="color: var(--primary-red); font-size: 1.3rem;"><i class="fab fa-linkedin-in"></i></a>
                         <a href="#" style="color: var(--primary-red); font-size: 1.3rem;"><i class="fab fa-facebook-f"></i></a>
@@ -1009,25 +1041,25 @@
                 </div>
                 <div class="director-bio">
                     <h3>Professional Background</h3>
-                    <p>Amukelani Msimeki is a distinguished legal professional based in Gauteng. He graduated with an LLB degree from the University of Pretoria in 2006, laying a strong academic foundation for his legal career. After years of rigorous training and practical experience, he was admitted as a practicing attorney in 2014.</p>
-                    <p>His dual role as a practicing attorney and Acting Magistrate across multiple Gauteng courts gives him a comprehensive understanding of both advocacy and judicial perspectives. This unique experience allows him to anticipate court decisions and craft winning strategies for his clients.</p>
-                    <p>Mr. Msimeki is deeply committed to making justice accessible. He believes that legal representation should not only be about winning cases but about making a meaningful difference in people's lives. Under his leadership, the firm has handled over 500 cases with a remarkable success rate.</p>
+                    <p>Amukelani Msimeki is a distinguished legal professional based in Gauteng, specialising in <strong>contested and uncontested divorces</strong> and <strong>Rule 43 applications</strong>. He graduated with an LLB degree from the University of Pretoria in 2006, laying a strong academic foundation for his legal career. After years of rigorous training and practical experience, he was admitted as a practicing attorney in 2014.</p>
+                    <p>His dual role as a practicing attorney and Acting Magistrate across multiple Gauteng courts gives him a comprehensive understanding of both advocacy and judicial perspectives. This unique experience allows him to anticipate court decisions and craft winning strategies for his clients, particularly in complex divorce and family law matters.</p>
+                    <p>Mr. Msimeki is deeply committed to making justice accessible. He believes that legal representation should not only be about winning cases but about making a meaningful difference in people's lives. Under his leadership, the firm has handled over 500 cases with a remarkable success rate, with divorce and family law at the heart of the practice.</p>
 
                     <div class="timeline">
                         <div class="timeline-item">
                             <span class="year">2006</span>
-                            <h4>LLB Graduate — University of Pretoria</h4>
+                            <h4>LLB Graduate - University of Pretoria</h4>
                             <p>Completed Bachelor of Laws degree, building a strong foundation in South African legal principles and jurisprudence.</p>
                         </div>
                         <div class="timeline-item">
                             <span class="year">2014</span>
                             <h4>Admitted as Practicing Attorney</h4>
-                            <p>Began practicing as a qualified attorney, representing clients in civil, criminal, and commercial matters across Gauteng.</p>
+                            <p>Founded Msimeki Amukelani Attorneys, establishing a practice focused on divorce, family law, and comprehensive legal services across Gauteng.</p>
                         </div>
                         <div class="timeline-item">
                             <span class="year">Present</span>
                             <h4>Director & Acting Magistrate</h4>
-                            <p>Leads Msimeki Amukelani Attorneys while serving as Acting Magistrate across multiple Gauteng courts, bringing judicial insight to private practice.</p>
+                            <p>Leads the firm as a specialist divorce attorney while serving as Acting Magistrate across multiple Gauteng courts, bringing judicial insight to private practice.</p>
                         </div>
                     </div>
                 </div>
@@ -1079,7 +1111,7 @@
     <section class="dark-section bg-image-section" style="padding: 5rem 5%; background-image: url('images/workwith.jpg');">
         <div style="max-width: 700px; margin: 0 auto; text-align: center;" class="fade-in">
             <h2 style="font-size: 2.2rem; color: var(--white); margin-bottom: 1rem;">Work With a Firm That Puts You First</h2>
-            <p style="color: rgba(255,255,255,0.7); margin-bottom: 2rem;">Experience the difference of dedicated, professional legal representation tailored to your needs.</p>
+            <p style="color: rgba(255,255,255,0.7); margin-bottom: 2rem;">Experience the difference of dedicated, professional legal representation. <strong style="color: var(--primary-red);">Right By Your Side.</strong></p>
             <a href="#" onclick="openBookingModal(); return false;" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Schedule a Consultation</a>
         </div>
     </section>
@@ -1091,8 +1123,9 @@
                 <div class="footer-logo-img">
                     <img src="logo.png" alt="Msimeki Amukelani Attorneys">
                 </div>
-                <p>A distinguished law firm based in Kempton Park, Gauteng. Committed to delivering exceptional legal services with integrity and professionalism.</p>
-                <p style="font-style: italic; color: #999; margin-top: 0.5rem;">"Vayimeri— Attorneys & Conveyancers"</p>
+                <p>A distinguished law firm based in Kempton Park, Gauteng. Specialising in contested and uncontested divorces, Rule 43 applications, and family law with integrity and professionalism.</p>
+                
+                <p style="color: var(--primary-red); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; font-size: 0.85rem; margin-top: 0.5rem;"><i class="fas fa-handshake" style="margin-right: 0.3rem;"></i> Right By Your Side</p>
                 <div class="footer-social">
                     <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
@@ -1110,9 +1143,10 @@
             </div>
             <div class="footer-col">
                 <h4>Practice Areas</h4>
-                <a href="services.html">Civil Litigation</a>
-                <a href="services.html">Property & Conveyancing</a>
+                <a href="services.html">Contested & Uncontested Divorce</a>
+                <a href="services.html">Rule 43 Applications</a>
                 <a href="services.html">Family Law</a>
+                <a href="services.html">Civil Litigation</a>
                 <a href="services.html">Commercial Law</a>
                 <a href="services.html">Criminal Law</a>
                 <a href="services.html">Estate Planning</a>

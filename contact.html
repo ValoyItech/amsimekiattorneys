@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="title" content="Contact Msimeki Amukelani Attorneys | Kempton Park Law Firm">
-<meta name="description" content="Contact Msimeki Amukelani Attorneys in Kempton Park for professional legal assistance. Get in touch for consultations in civil, criminal, family and commercial law.">
-<meta name="keywords" content="contact attorneys Kempton Park, law firm contact Gauteng, legal consultation, Msimeki Amukelani Attorneys contact">
+    <meta name="title" content="Contact Msimeki Amukelani Attorneys | Divorce & Family Law Firm Kempton Park">
+<meta name="description" content="Contact Msimeki Amukelani Attorneys in Kempton Park for specialist divorce and family law services. Get in touch for consultations in contested divorce, Rule 43 applications, and family law across Gauteng.">
+<meta name="keywords" content="contact divorce attorney Kempton Park, Rule 43 application contact, family law consultation Gauteng, legal consultation, Msimeki Amukelani Attorneys contact">
 <meta name="author" content="Msimeki Amukelani Attorneys">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#c62828">
@@ -16,15 +16,15 @@
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://amsimekiattorneys.co.za/contact.html">
-<meta property="og:title" content="Contact Msimeki Amukelani Attorneys">
-<meta property="og:description" content="Reach out to our legal team in Kempton Park for consultations and professional legal services.">
+<meta property="og:title" content="Contact Msimeki Amukelani Attorneys | Divorce & Family Law">
+<meta property="og:description" content="Reach out to our specialist divorce and family law team in Kempton Park for consultations and professional legal services.">
 <meta property="og:image" content="https://amsimekiattorneys.co.za/images/hero1.jpg">
 <meta property="og:site_name" content="Msimeki Amukelani Attorneys">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://amsimekiattorneys.co.za/contact.html">
 <meta name="twitter:title" content="Contact Msimeki Amukelani Attorneys">
-<meta name="twitter:description" content="Get in touch with experienced attorneys in Kempton Park for legal assistance.">
+<meta name="twitter:description" content="Get in touch with specialist divorce attorneys in Kempton Park for legal assistance.">
 <meta name="twitter:image" content="https://amsimekiattorneys.co.za/images/hero1.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -329,6 +329,14 @@
             font-weight: 800;
             margin-bottom: 0.5rem;
         }
+        .page-header-slogan {
+            color: var(--primary-red);
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
         .breadcrumb {
             color: rgba(255,255,255,0.6);
             font-size: 0.95rem;
@@ -411,6 +419,18 @@
         }
         .light-section .section-header h2 { color: var(--light-text); }
         .light-section .section-header p { color: var(--muted); }
+
+        /* Slogan Banner */
+        .slogan-banner {
+            background: var(--primary-red);
+            color: var(--white);
+            text-align: center;
+            padding: 1.2rem 5%;
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
 
         /* Contact Grid */
         .contact-grid {
@@ -761,6 +781,7 @@
             .form-row { grid-template-columns: 1fr; }
             .modal-form .form-row { grid-template-columns: 1fr; }
             .modal-box { padding: 1.5rem; }
+            .slogan-banner { font-size: 0.9rem; letter-spacing: 2px; padding: 1rem 5%; }
         }
 
 
@@ -889,9 +910,11 @@
                         <label>Service *</label>
                         <select required>
                             <option value="">Select...</option>
-                            <option>Civil Litigation</option>
-                            <option>Property & Conveyancing</option>
+                            <option>Contested Divorce</option>
+                            <option>Uncontested Divorce</option>
+                            <option>Rule 43 Application</option>
                             <option>Family Law</option>
+                            <option>Civil Litigation</option>
                             <option>Commercial Law</option>
                             <option>Criminal Law</option>
                             <option>Estate Planning</option>
@@ -933,6 +956,7 @@
     <!-- Page Header -->
     <div class="page-header" style="background-image: url('images/contactus.jpg');">
         <div class="page-header-content">
+            <div class="page-header-slogan"><i class="fas fa-handshake" style="margin-right: 0.5rem;"></i> Right By Your Side</div>
             <h1>Contact Us</h1>
             <div class="breadcrumb">
                 <a href="index.html">Home</a> <i class="fas fa-chevron-right"></i> <span>Contact</span>
@@ -940,11 +964,16 @@
         </div>
     </div>
 
+    <!-- Slogan Banner -->
+    <div class="slogan-banner">
+        <i class="fas fa-handshake" style="margin-right: 0.5rem;"></i> RIGHT BY YOUR SIDE
+    </div>
+
     <!-- Contact Section -->
     <section class="light-section">
         <div class="section-header fade-in">
             <h2>Get In Touch</h2>
-            <p>Reach out for professional legal consultation. We're here to help.</p>
+            <p>Reach out for specialist divorce and family law consultation. We're here to help. <strong style="color: var(--primary-red);">Right By Your Side.</strong></p>
         </div>
         <div class="contact-grid">
             <div class="contact-info-card fade-in">
@@ -1019,9 +1048,11 @@
                         <label for="service">Service Required</label>
                         <select id="service" name="service">
                             <option value="">Select a service...</option>
-                            <option value="civil">Civil Litigation</option>
-                            <option value="property">Property & Conveyancing</option>
+                            <option value="contested-divorce">Contested Divorce</option>
+                            <option value="uncontested-divorce">Uncontested Divorce</option>
+                            <option value="rule43">Rule 43 Application</option>
                             <option value="family">Family Law</option>
+                            <option value="civil">Civil Litigation</option>
                             <option value="commercial">Commercial Law</option>
                             <option value="criminal">Criminal Law</option>
                             <option value="estate">Estate Planning</option>
@@ -1077,8 +1108,9 @@
                 <div class="footer-logo-img">
                     <img src="logo.png" alt="Msimeki Amukelani Attorneys">
                 </div>
-                <p>A distinguished law firm based in Kempton Park, Gauteng. Committed to delivering exceptional legal services with integrity and professionalism.</p>
-                <p style="font-style: italic; color: #999; margin-top: 0.5rem;">"Vayimeri— Attorneys & Conveyancers"</p>
+                <p>A distinguished law firm based in Kempton Park, Gauteng. Specialising in contested and uncontested divorces, Rule 43 applications, and family law with integrity and professionalism.</p>
+                
+                <p style="color: var(--primary-red); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; font-size: 0.85rem; margin-top: 0.5rem;"><i class="fas fa-handshake" style="margin-right: 0.3rem;"></i> Right By Your Side</p>
                 <div class="footer-social">
                     <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
@@ -1096,9 +1128,10 @@
             </div>
             <div class="footer-col">
                 <h4>Practice Areas</h4>
-                <a href="services.html">Civil Litigation</a>
-                <a href="services.html">Property & Conveyancing</a>
+                <a href="services.html">Contested & Uncontested Divorce</a>
+                <a href="services.html">Rule 43 Applications</a>
                 <a href="services.html">Family Law</a>
+                <a href="services.html">Civil Litigation</a>
                 <a href="services.html">Commercial Law</a>
                 <a href="services.html">Criminal Law</a>
                 <a href="services.html">Estate Planning</a>

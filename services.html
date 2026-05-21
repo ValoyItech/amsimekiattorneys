@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="title" content="Legal Services | Msimeki Amukelani Attorneys Kempton Park">
-<meta name="description" content="Explore our legal services including civil litigation, conveyancing, family law, criminal law, commercial law, and estate planning in Kempton Park and Gauteng.">
-<meta name="keywords" content="legal services, civil litigation, conveyancing attorney, family law, criminal lawyer, commercial law Gauteng, estate planning attorneys">
+<meta name="description" content="Specialist divorce attorneys in Kempton Park. Expert contested & uncontested divorces, Rule 43 applications, family law, civil litigation, commercial law, criminal law and estate planning in Gauteng.">
+<meta name="keywords" content="divorce attorney Kempton Park, Rule 43 application, contested divorce, uncontested divorce, family law, legal services, civil litigation, criminal lawyer, commercial law Gauteng, estate planning attorneys">
 <meta name="author" content="Msimeki Amukelani Attorneys">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#c62828">
@@ -17,14 +17,14 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://amsimekiattorneys.co.za/services.html">
 <meta property="og:title" content="Legal Services | Msimeki Amukelani Attorneys">
-<meta property="og:description" content="Comprehensive legal services including civil, criminal, family, commercial law and conveyancing in Kempton Park.">
+<meta property="og:description" content="Specialist divorce and family law services including Rule 43 applications, contested and uncontested divorces in Kempton Park.">
 <meta property="og:image" content="https://amsimekiattorneys.co.za/images/hero1.jpg">
 <meta property="og:site_name" content="Msimeki Amukelani Attorneys">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://amsimekiattorneys.co.za/services.html">
 <meta name="twitter:title" content="Legal Services | Msimeki Amukelani Attorneys">
-<meta name="twitter:description" content="Expert legal services in Kempton Park covering multiple areas of law.">
+<meta name="twitter:description" content="Expert divorce and family law services in Kempton Park covering Rule 43, contested divorce, and more.">
 <meta name="twitter:image" content="https://amsimekiattorneys.co.za/images/hero1.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -329,6 +329,14 @@
             font-weight: 800;
             margin-bottom: 0.5rem;
         }
+        .page-header-slogan {
+            color: var(--primary-red);
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
         .breadcrumb {
             color: rgba(255,255,255,0.6);
             font-size: 0.95rem;
@@ -427,6 +435,18 @@
         .dark-section .section-header h2 { color: var(--white); }
         .dark-section .section-header p { color: rgba(255,255,255,0.6); }
 
+        /* Slogan Banner */
+        .slogan-banner {
+            background: var(--primary-red);
+            color: var(--white);
+            text-align: center;
+            padding: 1.2rem 5%;
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
         /* Service Detail Cards */
         .service-detail-card {
             background: var(--white);
@@ -440,6 +460,14 @@
         .service-detail-card:hover {
             box-shadow: 0 15px 40px rgba(0,0,0,0.1);
             border-color: rgba(198, 40, 40, 0.3);
+        }
+
+        .service-detail-card.featured {
+            border: 2px solid var(--primary-red);
+            box-shadow: 0 8px 30px rgba(198, 40, 40, 0.15);
+        }
+        .service-detail-card.featured:hover {
+            box-shadow: 0 20px 50px rgba(198, 40, 40, 0.25);
         }
 
         .service-detail-header {
@@ -704,6 +732,7 @@
             .service-detail-header { flex-direction: column; text-align: center; }
             .modal-form .form-row { grid-template-columns: 1fr; }
             .modal-box { padding: 1.5rem; }
+            .slogan-banner { font-size: 0.9rem; letter-spacing: 2px; padding: 1rem 5%; }
         }
 
 
@@ -832,9 +861,11 @@
                         <label>Service *</label>
                         <select required>
                             <option value="">Select...</option>
-                            <option>Civil Litigation</option>
-                            <option>Property & Conveyancing</option>
+                            <option>Contested Divorce</option>
+                            <option>Uncontested Divorce</option>
+                            <option>Rule 43 Application</option>
                             <option>Family Law</option>
+                            <option>Civil Litigation</option>
                             <option>Commercial Law</option>
                             <option>Criminal Law</option>
                             <option>Estate Planning</option>
@@ -876,6 +907,7 @@
     <!-- Page Header -->
     <div class="page-header" style="background-image: url('images/services.jpg');">
         <div class="page-header-content">
+            <div class="page-header-slogan"><i class="fas fa-handshake" style="margin-right: 0.5rem;"></i> Right By Your Side</div>
             <h1>Our Legal Services</h1>
             <div class="breadcrumb">
                 <a href="index.html">Home</a> <i class="fas fa-chevron-right"></i> <span>Services</span>
@@ -883,16 +915,137 @@
         </div>
     </div>
 
+    <!-- Slogan Banner -->
+    <div class="slogan-banner">
+        <i class="fas fa-handshake" style="margin-right: 0.5rem;"></i> RIGHT BY YOUR SIDE
+    </div>
+
     <!-- Intro -->
     <section class="light-section">
         <div class="section-header fade-in">
             <h2>Comprehensive Legal Expertise</h2>
-            <p>We offer a full spectrum of legal services tailored to meet the diverse needs of individuals and businesses in South Africa</p>
+            <p>Established in 2014, we offer specialist legal services with a primary focus on <strong>divorce and family law</strong>. Every client receives dedicated, compassionate representation tailored to their unique circumstances.</p>
         </div>
     </section>
 
     <!-- Services Detail -->
     <section class="light-section" style="padding-top: 0;">
+
+        <!-- Contested & Uncontested Divorce - FEATURED -->
+        <div class="service-detail-card featured fade-in">
+            <div class="service-detail-header">
+                <div class="service-detail-icon"><i class="fas fa-heart-crack"></i></div>
+                <div>
+                    <h3>Contested & Uncontested Divorce <span style="color: var(--primary-red); font-size: 0.85rem; margin-left: 0.5rem; text-transform: uppercase; letter-spacing: 1px;">Primary Focus</span></h3>
+                    <p>Expert legal guidance through every step of marriage dissolution</p>
+                </div>
+            </div>
+            <div class="service-detail-body">
+                <div>
+                    <h4><i class="fas fa-list-check"></i> What We Handle</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Contested divorce litigation</li>
+                        <li><i class="fas fa-check"></i> Uncontested divorce settlements</li>
+                        <li><i class="fas fa-check"></i> Mediated divorce agreements</li>
+                        <li><i class="fas fa-check"></i> Asset and property division</li>
+                        <li><i class="fas fa-check"></i> Pension interest claims</li>
+                        <li><i class="fas fa-check"></i> Spousal maintenance negotiations</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4><i class="fas fa-star"></i> Our Approach</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Sensitive and confidential handling</li>
+                        <li><i class="fas fa-check"></i> Strategic negotiation for fair settlements</li>
+                        <li><i class="fas fa-check"></i> Aggressive litigation when necessary</li>
+                        <li><i class="fas fa-check"></i> Child-centered solutions always</li>
+                        <li><i class="fas fa-check"></i> Clear communication throughout</li>
+                        <li><i class="fas fa-check"></i> Cost-transparent fee structures</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="service-cta-bar">
+                <span>Considering divorce? <strong>We are right by your side.</strong></span>
+                <a href="#" onclick="openBookingModal(); return false;" class="btn btn-dark" style="padding: 0.7rem 1.5rem; font-size: 0.8rem;"><i class="fas fa-calendar-check"></i> Book Now</a>
+            </div>
+        </div>
+
+        <!-- Rule 43 Applications - FEATURED -->
+        <div class="service-detail-card featured fade-in">
+            <div class="service-detail-header">
+                <div class="service-detail-icon"><i class="fas fa-file-shield"></i></div>
+                <div>
+                    <h3>Rule 43 Applications <span style="color: var(--primary-red); font-size: 0.85rem; margin-left: 0.5rem; text-transform: uppercase; letter-spacing: 1px;">Primary Focus</span></h3>
+                    <p>Urgent interim relief to protect you during divorce proceedings</p>
+                </div>
+            </div>
+            <div class="service-detail-body">
+                <div>
+                    <h4><i class="fas fa-list-check"></i> What We Handle</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Interim maintenance claims (spousal & child)</li>
+                        <li><i class="fas fa-check"></i> Custody and access arrangements</li>
+                        <li><i class="fas fa-check"></i> Contribution to legal costs</li>
+                        <li><i class="fas fa-check"></i> Residence and occupancy orders</li>
+                        <li><i class="fas fa-check"></i> Domestic violence interdicts</li>
+                        <li><i class="fas fa-check"></i> Enforcement of existing orders</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4><i class="fas fa-star"></i> Our Approach</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Urgent filing and swift action</li>
+                        <li><i class="fas fa-check"></i> Comprehensive financial disclosure</li>
+                        <li><i class="fas fa-check"></i> Strong courtroom advocacy</li>
+                        <li><i class="fas fa-check"></i> Protection of your financial stability</li>
+                        <li><i class="fas fa-check"></i> Child welfare as top priority</li>
+                        <li><i class="fas fa-check"></i> Strategic case preparation</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="service-cta-bar">
+                <span>Need urgent interim relief? <strong>We act fast.</strong></span>
+                <a href="#" onclick="openBookingModal(); return false;" class="btn btn-dark" style="padding: 0.7rem 1.5rem; font-size: 0.8rem;"><i class="fas fa-calendar-check"></i> Book Now</a>
+            </div>
+        </div>
+
+        <!-- Family Law -->
+        <div class="service-detail-card fade-in">
+            <div class="service-detail-header">
+                <div class="service-detail-icon"><i class="fas fa-people-roof"></i></div>
+                <div>
+                    <h3>Family Law</h3>
+                    <p>Compassionate guidance through all sensitive family matters</p>
+                </div>
+            </div>
+            <div class="service-detail-body">
+                <div>
+                    <h4><i class="fas fa-list-check"></i> What We Handle</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Child custody and access disputes</li>
+                        <li><i class="fas fa-check"></i> Maintenance claims and variations</li>
+                        <li><i class="fas fa-check"></i> Domestic violence protection orders</li>
+                        <li><i class="fas fa-check"></i> Parental rights and responsibilities</li>
+                        <li><i class="fas fa-check"></i> Antenuptial contracts</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4><i class="fas fa-star"></i> Our Approach</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Child-centered solutions</li>
+                        <li><i class="fas fa-check"></i> Mediation and settlement focus</li>
+                        <li><i class="fas fa-check"></i> Strong courtroom advocacy when needed</li>
+                        <li><i class="fas fa-check"></i> Emotional support referrals</li>
+                        <li><i class="fas fa-check"></i> Discreet and confidential service</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="service-cta-bar">
+                <span>Going through a family matter? <strong>We're here for you.</strong></span>
+                <a href="#" onclick="openBookingModal(); return false;" class="btn btn-dark" style="padding: 0.7rem 1.5rem; font-size: 0.8rem;"><i class="fas fa-calendar-check"></i> Book Now</a>
+            </div>
+        </div>
+
         <!-- Civil Litigation -->
         <div class="service-detail-card fade-in">
             <div class="service-detail-header">
@@ -926,80 +1079,6 @@
             </div>
             <div class="service-cta-bar">
                 <span>Need representation in a civil matter? <strong>We can help.</strong></span>
-                <a href="#" onclick="openBookingModal(); return false;" class="btn btn-dark" style="padding: 0.7rem 1.5rem; font-size: 0.8rem;"><i class="fas fa-calendar-check"></i> Book Now</a>
-            </div>
-        </div>
-
-        <!-- Property -->
-        <div class="service-detail-card fade-in">
-            <div class="service-detail-header">
-                <div class="service-detail-icon"><i class="fas fa-house-chimney"></i></div>
-                <div>
-                    <h3>Property Law & Conveyancing</h3>
-                    <p>Seamless property transactions with meticulous legal oversight</p>
-                </div>
-            </div>
-            <div class="service-detail-body">
-                <div>
-                    <h4><i class="fas fa-list-check"></i> What We Handle</h4>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Property transfers and registrations</li>
-                        <li><i class="fas fa-check"></i> Bond registrations and cancellations</li>
-                        <li><i class="fas fa-check"></i> Title deed searches and verification</li>
-                        <li><i class="fas fa-check"></i> Sectional title schemes</li>
-                        <li><i class="fas fa-check"></i> Property development advice</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4><i class="fas fa-star"></i> Our Approach</h4>
-                    <ul>
-                        <li><i class="fas fa-check"></i> End-to-end transaction management</li>
-                        <li><i class="fas fa-check"></i> Due diligence and risk assessment</li>
-                        <li><i class="fas fa-check"></i> Coordination with banks and agents</li>
-                        <li><i class="fas fa-check"></i> Compliance with all legal requirements</li>
-                        <li><i class="fas fa-check"></i> Efficient turnaround times</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="service-cta-bar">
-                <span>Buying or selling property? <strong>Let us handle the legalities.</strong></span>
-                <a href="#" onclick="openBookingModal(); return false;" class="btn btn-dark" style="padding: 0.7rem 1.5rem; font-size: 0.8rem;"><i class="fas fa-calendar-check"></i> Book Now</a>
-            </div>
-        </div>
-
-        <!-- Family Law -->
-        <div class="service-detail-card fade-in">
-            <div class="service-detail-header">
-                <div class="service-detail-icon"><i class="fas fa-people-roof"></i></div>
-                <div>
-                    <h3>Family Law</h3>
-                    <p>Compassionate guidance through sensitive family matters</p>
-                </div>
-            </div>
-            <div class="service-detail-body">
-                <div>
-                    <h4><i class="fas fa-list-check"></i> What We Handle</h4>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Divorce proceedings (contested & uncontested)</li>
-                        <li><i class="fas fa-check"></i> Child custody and access arrangements</li>
-                        <li><i class="fas fa-check"></i> Maintenance claims (child and spousal)</li>
-                        <li><i class="fas fa-check"></i> Domestic violence protection orders</li>
-                        <li><i class="fas fa-check"></i> Antenuptial contracts</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4><i class="fas fa-star"></i> Our Approach</h4>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Sensitive and confidential handling</li>
-                        <li><i class="fas fa-check"></i> Child-centered solutions</li>
-                        <li><i class="fas fa-check"></i> Mediation and settlement focus</li>
-                        <li><i class="fas fa-check"></i> Strong courtroom advocacy when needed</li>
-                        <li><i class="fas fa-check"></i> Emotional support referrals</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="service-cta-bar">
-                <span>Going through a family matter? <strong>We're here for you.</strong></span>
                 <a href="#" onclick="openBookingModal(); return false;" class="btn btn-dark" style="padding: 0.7rem 1.5rem; font-size: 0.8rem;"><i class="fas fa-calendar-check"></i> Book Now</a>
             </div>
         </div>
@@ -1152,7 +1231,7 @@
     <section class="light-section" style="text-align: center;">
         <div class="fade-in">
             <h2 style="font-size: 2rem; color: var(--light-text); margin-bottom: 1rem;">Not Sure Which Service You Need?</h2>
-            <p style="color: var(--muted); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">Contact us for a free initial assessment. We'll guide you to the right legal solution for your situation.</p>
+            <p style="color: var(--muted); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">Contact us for a free initial assessment. We'll guide you to the right legal solution for your situation. <strong style="color: var(--primary-red);">Right By Your Side.</strong></p>
             <a href="contact.html" class="btn btn-primary"><i class="fas fa-phone"></i> Contact Us</a>
             <a href="#" onclick="openBookingModal(); return false;" class="btn btn-dark" style="margin-left: 1rem;"><i class="fas fa-calendar-check"></i> Book a Consultation</a>
         </div>
@@ -1165,8 +1244,9 @@
                 <div class="footer-logo-img">
                     <img src="logo.png" alt="Msimeki Amukelani Attorneys">
                 </div>
-                <p>A distinguished law firm based in Kempton Park, Gauteng. Committed to delivering exceptional legal services with integrity and professionalism.</p>
-                <p style="font-style: italic; color: #999; margin-top: 0.5rem;">"Vayimeri— Attorneys & Conveyancers"</p>
+                <p>A distinguished law firm based in Kempton Park, Gauteng. Specialising in contested and uncontested divorces, Rule 43 applications, and family law with integrity and professionalism.</p>
+                
+                <p style="color: var(--primary-red); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; font-size: 0.85rem; margin-top: 0.5rem;"><i class="fas fa-handshake" style="margin-right: 0.3rem;"></i> Right By Your Side</p>
                 <div class="footer-social">
                     <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
@@ -1184,9 +1264,10 @@
             </div>
             <div class="footer-col">
                 <h4>Practice Areas</h4>
-                <a href="services.html">Civil Litigation</a>
-                <a href="services.html">Property & Conveyancing</a>
+                <a href="services.html">Contested & Uncontested Divorce</a>
+                <a href="services.html">Rule 43 Applications</a>
                 <a href="services.html">Family Law</a>
+                <a href="services.html">Civil Litigation</a>
                 <a href="services.html">Commercial Law</a>
                 <a href="services.html">Criminal Law</a>
                 <a href="services.html">Estate Planning</a>
